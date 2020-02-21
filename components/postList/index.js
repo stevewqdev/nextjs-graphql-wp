@@ -57,7 +57,7 @@ class PostList extends Component {
                       <h5>{post.title.rendered}</h5>
                     </div>
                     <div className="excerpt">
-                      <p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
+                      <div dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
                     </div>
                     <div className="meta">
                       <div className="date">

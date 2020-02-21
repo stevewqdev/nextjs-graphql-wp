@@ -9,7 +9,6 @@ class Header extends Component {
             <MainMenu locationClass={'top'} menuLocation={'main-menu'} />
           </header>
         </>
-        
       )
     }
 }

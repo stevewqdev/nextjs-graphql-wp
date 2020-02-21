@@ -1,28 +1,28 @@
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
-
+import Link from "next/link"
 const GET_MENU = gql`
-  query MyQuery($postSlug: String!) {
-    menus(where: {slug: $postSlug}) {
-      edges {
-        node {
-          id
-          name
-          slug
-          menuItems {
-            edges {
-              node {
-                cssClasses
-                label
-                url
-                id
-              }
+query MyQuery {
+  menus(where: {slug: "main-menu"}) {
+    edges {
+      node {
+        id
+        name
+        slug
+        menuItems {
+          edges {
+            node {
+              cssClasses
+              label
+              url
+              id
             }
           }
         }
       }
     }
   }
+}
 `;
 
 function MainMenu(props) {
@@ -39,7 +39,7 @@ function MainMenu(props) {
     if(data){
         menuData = data.menus.edges[0].node.menuItems.edges
     }
-    
+
     if(menuData){
         return (
             <div className={`main__menu__wrapper ${locationClass}`}>
@@ -48,7 +48,9 @@ function MainMenu(props) {
                     data.menus.edges[0].node.menuItems.edges.map(item => (
                         <li key={item.node.id}>
                             <Link href={item.node.url}>
+                              <a>
                                 {item.node.label}
+                              </a>
                             </Link>
                         </li>
                     ))
@@ -56,9 +58,8 @@ function MainMenu(props) {
                 </ul>
             </div>
         );
-    }else{
-      return null
     }
+    return <div></div>;
 }
 
 export default MainMenu;

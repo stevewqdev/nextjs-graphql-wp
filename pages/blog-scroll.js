@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Main from "../lib/layout";
+import Layout from "../components/layout";
 import Head from 'next/head'
 import PostListScroll from '../components/postListScroll/index'
 
@@ -7,7 +7,7 @@ class BlogScroll extends Component {
   render() {
     return (
       <>
-        <Main>
+        <Layout>
           <Head>
             <title>Create Next App</title>
             <link rel="icon" href="/favicon.ico" />
@@ -15,7 +15,7 @@ class BlogScroll extends Component {
           <div className="blog__wrapper">
             <PostListScroll />
           </div>
-        </Main>
+        </Layout>
       </>
     )
   }

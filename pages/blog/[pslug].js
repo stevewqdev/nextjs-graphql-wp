@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import Main from "../../lib/layout";
+import Layout from "../../components/layout";
 import withData from "../../lib/apollo";
 import PostContent from "../../components/postContent/index"
 
@@ -8,8 +8,8 @@ export default withData(props => {
     const { pslug } = router.query
   
     return (
-    <Main>
+    <Layout>
         <PostContent slug={pslug} />
-    </Main>
+    </Layout>
   );
 });

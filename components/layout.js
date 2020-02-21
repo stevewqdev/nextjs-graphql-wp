@@ -6,6 +6,7 @@ import { createHttpLink } from 'apollo-link-http'
 import fetch from 'node-fetch'
 
 import Header from "../components/header/index"
+import Footer from "../components/footer/index"
 
 // Instantiate required constructor fields
 const cache = new InMemoryCache();
@@ -17,25 +18,19 @@ const client = new ApolloClient({
     uri: "https://gatsby.raxo.dev/graphql",
     fetch: fetch,
   }),
-  // Provide some optional constructor fields
-  name: 'react-web-client',
-  version: '1.3',
-  queryDeduplication: false,
-  defaultOptions: {
-    watchQuery: {
-      fetchPolicy: 'cache-and-network',
-    },
-  },
 });
 
-export default ({ children }) => (
-  <div>
+const Layout = props => (
+  <div className="Layout" >
     <ApolloProvider client={client}>
       <Header />
-      {children}
-      <footer>
-        Made by Steve Quezada, Raxo
-      </footer>
+      <div className="Content" >
+        {props.children}
+      </div>
+      <Footer />
     </ApolloProvider>
   </div>
 );
+
+
+export default Layout;

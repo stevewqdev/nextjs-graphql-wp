@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Main from "../lib/layout";
+import Layout from "../components/layout";
 import Head from 'next/head'
 import PostList from '../components/postList/index'
 
@@ -7,7 +7,7 @@ class Blog extends Component {
   render() {
     return (
       <>
-        <Main>
+        <Layout>
           <Head>
             <title>Create Next App</title>
             <link rel="icon" href="/favicon.ico" />
@@ -15,7 +15,7 @@ class Blog extends Component {
           <div className="blog__wrapper">
             <PostList />
           </div>
-        </Main>
+        </Layout>
       </>
     )
   }

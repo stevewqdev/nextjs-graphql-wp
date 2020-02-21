@@ -53,7 +53,6 @@ function PostList(props) {
     variables: { postSlug: pslug },
     notifyOnNetworkStatusChange: true
   });
-  
   if (data) {
     return (
         <>
