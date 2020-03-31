@@ -13,7 +13,7 @@
     "apollo-boost": "^0.4.7",
     "axios": "^0.19.2",
     "graphql": "^14.6.0",
-    "next": "9.2.2",
+    "next": "9.3.2",
     "next-apollo": "^3.1.10",
     "next-with-apollo": "^5.0.0",
     "react": "16.12.0",
